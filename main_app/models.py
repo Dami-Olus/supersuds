@@ -12,3 +12,7 @@ class Service(models.Model):
     service_description = models.TextField(max_length=200)
     service_price = models.IntegerField
     service_duration = models.CharField(max_length=20)
+
+class Request(models.Model):
+    address = models.TextField(max_length=200)
+    opening_hrs = models.CharField(max_length=50)
