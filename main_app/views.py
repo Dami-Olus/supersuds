@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 # Create your views here.
 from .models import Car
@@ -22,6 +22,14 @@ class CarCreate(CreateView):
    
     def get_success_url(self):
         return reverse_lazy('detail', kwargs={'car_id': self.object.id})
+    
+class CarUpdate(UpdateView):
+    model=Car
+    fields = ['make', 'model', 'color', 'licence']
+
+class CarDelete(DeleteView):
+    model = Car
+    success_url = 'main_app/cars'
 
 def car_list(request):
     cars = Car.objects.all()
