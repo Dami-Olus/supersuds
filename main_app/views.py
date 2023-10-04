@@ -29,7 +29,7 @@ class CarUpdate(UpdateView):
 
 class CarDelete(DeleteView):
     model = Car
-    success_url = 'main_app/cars'
+    success_url = '/main_app/cars'
 
 def car_list(request):
     cars = Car.objects.all()
