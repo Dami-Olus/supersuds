@@ -19,7 +19,7 @@ class Car(models.Model):
 class Service(models.Model):
     service_name = models.CharField(max_length=50)
     service_description = models.TextField(max_length=200)
-    service_price = models.IntegerField
+    service_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     service_duration = models.CharField(max_length=20)
 
     def __str__(self):
@@ -33,9 +33,11 @@ class Location(models.Model):
         return self.address
 
 class Request(models.Model):
+    
     car = models.ForeignKey(Car, on_delete=models.CASCADE)
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Order(models.Model):
     request = models.ForeignKey(Request, on_delete=models.CASCADE)

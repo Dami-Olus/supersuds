@@ -5,6 +5,7 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 # Create your views here.
 from .models import Car
+from .forms import RequestForm
 
 def home(request):
     return render(request, 'main_app/home_page.html')
@@ -14,7 +15,8 @@ def index(request):
 
 def detail(request, car_id):
     car = Car.objects.get(id=car_id)
-    return render(request, 'main_app/car_detail.html', {'car': car})
+    request_form = RequestForm()
+    return render(request, 'main_app/car_detail.html', {'car': car, 'request_form': request_form})
 
 class CarCreate(CreateView):
     model = Car
