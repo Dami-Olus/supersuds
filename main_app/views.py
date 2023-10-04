@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -41,3 +41,11 @@ def car_list(request):
     # }
     # return HttpResponse(template.render(context, request))
     return render(request, 'main_app/index.html', {'cars': cars})
+
+def create_request(request, car_id):
+    form = RequestForm(request.POST)
+    if form.is_valid():
+      new_request = form.save(commit=False)
+      new_request.car_id = car_id
+      new_request.save()
+    return redirect('detail', car_id=car_id)

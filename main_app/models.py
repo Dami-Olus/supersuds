@@ -37,7 +37,7 @@ class Request(models.Model):
     car = models.ForeignKey(Car, on_delete=models.CASCADE)
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+   
 
 class Order(models.Model):
     request = models.ForeignKey(Request, on_delete=models.CASCADE)
