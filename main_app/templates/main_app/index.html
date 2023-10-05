@@ -1,0 +1,28 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block title %} My Cars {% endblock %}
+{% block content %}
+
+{% if cars %}
+<p> <a href="{% url 'cars_create' %}">Add a new car</a> </p>
+  <ul>
+  {% for car in cars %}
+      <li class="mb-2 bg-gray-200 flex w-72 p-5 gap-2 rounded-lg">
+        <div>
+          <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/03c34975-991c-45ee-a340-2b700bf7de01/bvlatuR/std/960x540/meet-your-tesla_model-s?20190221" alt="" class="h-24">
+        </div>
+        <div>
+          <a href="{{ car.id }}/">
+            <p>{{ car.make }}, {{car.model}}</p>
+            <p>{{car.licence}}</p>
+            </a>
+        </div>
+      </li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>No cars added yet.</p>
+  <p> <a href="{% url 'cars_create' %}">Add a new car</a> </p>
+{% endif %}
+
+{% endblock %}

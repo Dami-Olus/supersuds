@@ -1,0 +1,46 @@
+{% extends 'main_app/base.html' %}
+{% block content %}
+<div class="flex justify-around items-center">
+  <div>
+    <h1 class="text-3xl">{{car.make}}, {{car.model}}</h1>
+    <div class="flex items-center">
+      <div>
+        <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/03c34975-991c-45ee-a340-2b700bf7de01/bvlatuR/std/960x540/meet-your-tesla_model-s?20190221" alt="" class="h-48">
+      </div>
+      <div class="mt-5 mb-5">
+        <a href="{% url 'cars_update' car.id%}"> <button class="bg-gray-200 p-3 w-24 rounded-md">Edit</button> </a>
+        <a href="{% url 'cars_delete' car.id%}"> <button class="bg-gray-200 p-3 w-24 rounded-md"> Delete</button></a>
+      </div>
+    </div>
+    
+    
+    <div>
+      <form action="{% url 'create_request' car.id %}" method="POST">
+        {% csrf_token %}
+        {{ request_form.as_p }}
+        <input class="bg-gray-200 p-3 w-100 rounded-md mt-5" type="submit" value="Submit Request!">
+      </form>
+    </div>
+  </div>
+  <div>
+    <div>
+      <table class="border-2">
+        <thead class="border-2">
+          <tr><th class="border-2 bg-blue-400 text-white  w-52 p-2">Service</th><th class="border-2 bg-blue-400 text-white w-52 p-2">Location</th></tr>
+        </thead>
+        <tbody class="border-2">
+          {% for request in car.request_set.all %}
+          <tr>
+            <td class="border-2 p-2">{{request.service}}</td>
+            <td class="border-2 p-2">{{request.location}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

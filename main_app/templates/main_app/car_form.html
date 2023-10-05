@@ -1,0 +1,15 @@
+{% extends 'main_app/base.html' %}
+{% block content %}
+{% if object %}
+  <h1>Edit <span>{{object.make}}, {{object.model}}</span></h1>
+{% else %}
+  <h1>Add a Car</h1>
+{% endif %}
+<form action=""  method="POST">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table}}
+  </table>
+  <input type="submit" value="Submit!">
+</form>
+{% endblock %}

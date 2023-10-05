@@ -1,0 +1,80 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+<div class="mb-5">
+  <h1 class="text-3xl">SuperSuds</h1>
+  <p>For us, one of the most important facts is that our customers are not an interruption of our work, they are the purpose of it. We are not doing them a favour by serving them! They are doing us a favour by giving us an opportunity to do so. We take pride in taking care of your vehicle and it shows. Our associates will quickly assess your needs and help you make a decision on the service that is perfect for you and your car. We strive to exceed your expectations every time you visit us as we continue to earn your business.</p>
+</div>
+
+<div>
+  <h1 class="text-3xl mb-5">Service & Benefits</h1>
+  <div class="flex justify-evenly">
+    <div class="flex flex-col">
+      <img src="{% static 'assets/images/carwash3.jpeg' %}" alt="carwash2" class="h-48">
+      <p>Detailing</p>
+    </div>
+
+    <div class="flex flex-col">
+      <img src="{% static 'assets/images/carwash3.jpeg' %}" alt="carwash2" class="h-48">
+      <p>Detailing</p>
+    </div>
+
+    <div class="flex flex-col">
+      <img src="{% static 'assets/images/carwash3.jpeg' %}" alt="carwash2" class="h-48">
+      <p>Detailing</p>
+    </div>
+
+    <div class="flex flex-col">
+      <img src="{% static 'assets/images/carwash3.jpeg' %}" alt="carwash2" class="h-48">
+      <p>Detailing</p>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 class="text-3xl mb-5">Testimonials</h1>
+<div class="flex justify-evenly">
+
+
+  <div>
+    <img src="{% static 'assets/images/carwash3.jpeg' %}" alt="carwash2" class="h-24 w-24 rounded-full">
+    <p class="w-48">"I always bring my car here to wash because they always do a fantastic job</p>
+  </div>
+  <div>
+    <img src="{% static 'assets/images/carwash3.jpeg' %}" alt="carwash2" class="h-24 w-24 rounded-full">
+    <p class="w-48">"I always bring my car here to wash because they always do a fantastic job</p>
+  </div>
+  <div>
+    <img src="{% static 'assets/images/carwash3.jpeg' %}" alt="carwash2" class="h-24 w-24 rounded-full">
+    <p class="w-48">"I always bring my car here to wash because they always do a fantastic job</p>
+  </div>
+  <div>
+    <img src="{% static 'assets/images/carwash3.jpeg' %}" alt="carwash2" class="h-24 w-24 rounded-full">
+    <p class="w-48">"I always bring my car here to wash because they always do a fantastic job</p>
+  </div>
+</div>
+</div>
+<div>
+  <h1 class="text-3xl">Locations</h1>
+<div class="flex justify-between">
+  <div>
+    <p>Adress:4 yardmaster dr, Brampton, ON</p>
+    <p>Opening hours: 8:00am - 4:00pm</p>
+    <p><a href="">Directions</a></p>
+  </div>
+  <div>
+    <p>Adress:4 yardmaster dr, Brampton, ON</p>
+    <p>Opening hours: 8:00am - 4:00pm</p>
+    <p><a href="">Directions</a></p>
+  </div>
+  <div>
+    <p>Adress:4 yardmaster dr, Brampton, ON</p>
+    <p>Opening hours: 8:00am - 4:00pm</p>
+    <p><a href="">Directions</a></p>
+  </div>
+</div>
+  
+
+</div>
+{% endblock %}
