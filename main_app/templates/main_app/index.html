@@ -4,10 +4,10 @@
 {% block content %}
 
 {% if cars %}
-<p> <a href="{% url 'cars_create' %}">Add a new car</a> </p>
+<button class=" bg-gray-200 p-2 w-36 text-lg mb-5 mt-5 rounded-lg"> <a href="{% url 'cars_create' %}">Add car <span class="text-3xl">+</span></a> </button>
   <ul>
   {% for car in cars %}
-      <li class="mb-2 bg-gray-200 flex w-72 p-5 gap-2 rounded-lg">
+      <li class="mb-2 bg-gray-200 flex w-80 p-5 gap-2 rounded-lg">
         <div>
           <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/03c34975-991c-45ee-a340-2b700bf7de01/bvlatuR/std/960x540/meet-your-tesla_model-s?20190221" alt="" class="h-24">
         </div>

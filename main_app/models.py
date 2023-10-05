@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+import datetime
 
 # Create your models here.
 class Car(models.Model):
@@ -33,7 +34,7 @@ class Location(models.Model):
         return self.address
 
 class Request(models.Model):
-    
+    date = models.DateField(default=datetime.date.today)
     car = models.ForeignKey(Car, on_delete=models.CASCADE)
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
